@@ -16,7 +16,11 @@ const PokemonCard = (pokemon: PokemonType) => {
         <CardActionArea style={{ flexDirection: "column" }}>
           <Image src={pokemon.image} width={150} height={150} alt="" />
           <CardContent>
-            <Typography variant="h6" component="div">
+            <Typography
+              variant="h6"
+              component="div"
+              style={{ textAlign: "center" }}
+            >
               {capitalizeFirstLetter(pokemon.name)}
             </Typography>
           </CardContent>
