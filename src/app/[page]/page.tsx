@@ -16,9 +16,16 @@ export default async function PokemonPage({
   return (
     <>
       <PokemonList pokemons={pokemonList} />
-      <div style={{ margin: "10px 0" }}>
-        {page > 0 && <PreviousButton previous={page - 1} />}
+      <div
+        style={{
+          margin: "10px 0",
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: "row-reverse",
+        }}
+      >
         {page * PAGE_SIZE < count && <NextButton next={+page + 1} />}
+        {page > 0 && <PreviousButton previous={page - 1} />}
       </div>
     </>
   );

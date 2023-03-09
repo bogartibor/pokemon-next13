@@ -8,7 +8,14 @@ export default async function Home() {
   return (
     <>
       {pokemons && <PokemonList pokemons={pokemons} />}
-      <div style={{ margin: "10px 0" }}>
+      <div
+        style={{
+          margin: "10px 0",
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: "row-reverse",
+        }}
+      >
         <NextButton next={1} />
       </div>
     </>

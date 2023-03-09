@@ -1,14 +1,36 @@
 "use client";
 
-import { Button } from "@mui/material";
+import { Box, Button, CircularProgress, LinearProgress } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function NextButton({ next }: { next: number }) {
+  const router = useRouter();
+  const [isRedirecting, setIsRedirecting] = useState(false);
+
+  const handleClick = () => {
+    setIsRedirecting(true);
+    router.push(`/${next}`);
+  };
+
   return (
-    <Link href={`/${next}`}>
-      <Button style={{ float: "right" }} variant="outlined">
+    <Box sx={{ position: "relative", width: "fit-content" }}>
+      <Button disabled={isRedirecting} onClick={handleClick} variant="outlined">
         Next page
       </Button>
-    </Link>
+      {isRedirecting && (
+        <LinearProgress
+          color="inherit"
+          sx={{
+            position: "absolute",
+            color: "gray",
+            bottom: "0",
+            borderRadius: "0 0 7px 7px",
+            width: "100%",
+          }}
+        />
+      )}
+    </Box>
   );
 }
