@@ -1,3 +1,5 @@
+import SkeletonList from "@/components/SkeletonList";
+
 export default function Loading() {
-  return "Loading pokemons...";
+  return <SkeletonList />;
 }

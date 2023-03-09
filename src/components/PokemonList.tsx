@@ -1,10 +1,7 @@
 "use client";
 
 import { PokemonType } from "@/types/pokemon";
-import { Grid } from "@mui/material";
 import PokemonCard from "./PokemonCard";
-
-//.gridTemplateColums: {fluid: "repeat(auto-fit,minmax(15rem,1fr))"};
 
 const PokemonList = ({ pokemons }: { pokemons: PokemonType[] }) => {
   return (
