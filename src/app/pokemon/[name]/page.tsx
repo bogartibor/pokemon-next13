@@ -7,7 +7,7 @@ import { PAGE_SIZE } from "@/constants/page";
 export async function generateStaticParams() {
   const data = await getPokemonList();
   return data?.results?.map(({ name }) => ({
-    name: name,
+    name,
   }));
 }
 

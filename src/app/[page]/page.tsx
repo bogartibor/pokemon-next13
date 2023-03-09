@@ -4,6 +4,12 @@ import PreviousButton from "@/components/PreviousButton";
 import { PAGE_SIZE } from "@/constants/page";
 import { getPokemonList, getPokemons } from "@/lib/pokemon";
 
+export async function generateStaticParams() {
+  return Array.from({ length: 10 }, (_, index) => ({
+    page: index.toString(),
+  }));
+}
+
 export default async function PokemonPage({
   params,
 }: {

@@ -1,7 +1,6 @@
 "use client";
 
-import { Box, Button, CircularProgress, LinearProgress } from "@mui/material";
-import Link from "next/link";
+import { Box, Button, LinearProgress } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
